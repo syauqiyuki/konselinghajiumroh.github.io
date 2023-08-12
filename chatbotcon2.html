@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chat-container {
+            width: 1000px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #69c6ba;
+            border-radius: 5px;
+        }
+        #chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #69c6ba;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #user-input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #69c6ba;
+            border-radius: 5px;
+        }
+        #send-button {
+            display: block;
+            margin-top: 10px;
+            background-color: #69c6ba;
+            color: #fff;
+            border: none;
+            padding: 5px 465px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="tm-main-content" id="top">
+        <div class="tm-top-bar-bg"></div>    
+           <div class="tm-top-bar" id="tm-top-bar">
+               <div class="container">
+                   <div class="row">
+                       <nav class="navbar navbar-expand-lg narbar-light">
+                           <a class="navbar-brand mr-auto" href="#">
+                               <img src="img/kabah2.png" alt="Site logo">Konseling haji Umroh & wisata internasional</a>
+                           <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                               <span class="navbar-toggler-icon"></span>
+                           </button>
+                           <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                               <ul class="navbar-nav ml-auto">
+                                 <li class="nav-item">
+                                   <a class="nav-link active" href="index.html">Home</a>
+                               </li>
+                               
+                           </ul> 
+                       </div>                            
+                   </nav>
+               </div>  <!-- row -->
+           </div> <!-- container --> 
+       </div>  <!-- .tm-top-bar -->
+    <div id="chat-container">
+        <div id="chat-box">
+           <center><h2><strong>Selamat Datang di Layanan Konsultasi Haji dan Umroh!</strong></h2></center>
+        </div>
+        <input type="text" id="user-input" placeholder="Ketik pesan...">
+        <button id="send-button">Kirim</button>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', () => {
+            const userMessage = userInput.value;
+            if (userMessage.trim() !== '') {
+                appendMessage('user', userMessage);
+                // Di sini Anda dapat menambahkan logika untuk berinteraksi dengan chatbot dan mendapatkan respons dari server.
+                // Misalnya, Anda dapat menggunakan teknologi seperti Ajax untuk mengirim dan menerima data dari server.
+                // Setelah menerima respons dari server/chatbot, Anda bisa memanggil fungsi appendMessage('chatbot', response) untuk menampilkan respons chatbot di antarmuka.
+                userInput.value = '';
+            }
+        });
+
+        function appendMessage(sender, message) {
+            const messageElement = document.createElement('p');
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+     <footer>
+        <div class="tm-container-outer">
+            <div class="row">
+   
+                  <div class="tm-container-outer">
+                       <h3>Office Building</h3>
+                       <p><i class="fa fa-globe"></i> Signtature park Apartment, TA-02 25, Mt Hariono Jakarta Selatan</p>
+                       <p><i class="fa fa-phone"></i> 010-020-0990</p>
+                       <p><i class="fa fa-save"></i> bkhajiumroh@gmail.com</p>
+                  </div>
+
+            <div class="clearfix col-md-12 col-sm-12">
+                <hr>
+           </div>
+           <div class="tm-container-outer">
+            <p class="mb-0">Copyright © <span class="tm-current-year">2023</span> Qizi Corporation
+        
+            .Designed by <a rel="nofollow" href="https://www.instagram.com/syauqiyuki/" target="_parent">SyauqiYuki</a></p>
+              
+        
+            </div>
+        </div>
+       
+        
+    </div>
+</footer>
+   
+
+   
+</div>
+</div> <!-- .main-content -->
+
+<!-- load JS files -->
+<script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+<script src="js/popper.min.js"></script>                    <!-- https://popper.js.org/ -->       
+<script src="js/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
+<script src="js/datepicker.min.js"></script>                <!-- https://github.com/qodesmith/datepicker -->
+<script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+<script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
+<script src="js/jquery.scrollTo.min.js"></script>           <!-- https://github.com/flesler/jquery.scrollTo -->
+
+
+</body>
+</html>
